@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CompanyLogo from '../assets/CompanyLogo.png'
+import CompanyLogo from '../assets/Companylogo.png'
 import { Link } from 'react-router-dom';
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
