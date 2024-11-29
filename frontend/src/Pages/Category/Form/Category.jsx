@@ -8,10 +8,11 @@ const Category = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const response = await fetch('https://backend-hrcompliance.onrender.com/api/category', {
+        const response = await fetch('http://localhost:5000/api/category', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            credentials: 'include', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify({ category }),
         })
         if (response.ok) {

@@ -29,9 +29,8 @@ const UserManagementList = ({ data, setData }) => {
             }
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/usermanagement/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/usermanagement/${id}`, {
                     method: 'DELETE',
-                    credentials: 'include', 
                 })
                 const data = await response.json()
                 if (response.ok) {

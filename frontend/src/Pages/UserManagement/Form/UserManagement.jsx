@@ -20,9 +20,8 @@ const UserManagement = () => {
         data.append('designation', formData.designation)
         data.append('moduleAccess', formData.modulesAccess)
         data.append('image', formData.profilePhoto)
-        const response = await fetch('https://backend-hrcompliance.onrender.com/api/usermanagement/upload', {
+        const response = await fetch('http://localhost:5000/api/usermanagement/upload', {
             method: 'POST',
-            credentials: 'include', 
             body: data,
         })
         const result = await response.json()

@@ -13,7 +13,7 @@ const Layout = () => {
 
     const fetchUsers = async () => {
         try {
-            const response = await fetch('https://backend-hrcompliance.onrender.com/api/usermanagement')
+            const response = await fetch('http://localhost:5000/api/usermanagement')
             if (response.ok) {
                 const data = await response.json()
                 setData(data)

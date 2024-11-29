@@ -16,8 +16,8 @@ const SubCategoryList = () => {
     const fetchData = async () => {
         try {
             const [categoryResponse, subCategoryResponse] = await Promise.all([
-                fetch('https://backend-hrcompliance.onrender.com/api/category'),
-                fetch('https://backend-hrcompliance.onrender.com/api/subcategory')
+                fetch('http://localhost:5000/api/category'),
+                fetch('http://localhost:5000/api/subcategory')
             ])
             const categoryData = await categoryResponse.json()
             const subCategoryData = await subCategoryResponse.json()
@@ -52,9 +52,8 @@ const SubCategoryList = () => {
             }
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/subcategory/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/subcategory/${id}`, {
                     method: 'DELETE',
-                    credentials: 'include', 
                 })
                 const data = await response.json()
                 if (response.ok) {

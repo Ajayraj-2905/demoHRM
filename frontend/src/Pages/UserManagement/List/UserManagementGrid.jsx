@@ -22,9 +22,8 @@ const UserManagementGrid = ({ user, setData }) => {
             }
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/usermanagement/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/usermanagement/${id}`, {
                     method: 'DELETE',
-                    credentials: 'include', 
                 })
                 const data = await response.json()
                 if (response.ok) {
@@ -56,7 +55,7 @@ const UserManagementGrid = ({ user, setData }) => {
         <div className="border rounded-lg min-w-64 p-4 pt-10 bg-white flex flex-col items-center border-t-8">
             <div className='h-28 w-28 mb-4 flex justify-center items-center'>{user.profile_photo ? (
                 <img
-                    src={`https://backend-hrcompliance.onrender.com/public/${user.profile_photo}`}
+                    src={`http://localhost:5000/public/${user.profile_photo}`}
                     alt={`${user.username}'s profile`}
                     className="w-28 h-28 rounded-full object-cover" />) :
                 (<svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

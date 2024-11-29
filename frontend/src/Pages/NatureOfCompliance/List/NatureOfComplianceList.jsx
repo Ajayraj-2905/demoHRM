@@ -13,7 +13,7 @@ const NatureOfComplianceList = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('https://backend-hrcompliance.onrender.com/api/natureofcompliance')
+            const response = await fetch('http://localhost:5000/api/natureofcompliance')
             const result = await response.json()
             setData(result)
         } catch (error) {
@@ -45,9 +45,8 @@ const NatureOfComplianceList = () => {
             }
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/natureofcompliance/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/natureofcompliance/${id}`, {
                     method: 'DELETE',
-                    credentials: 'include', 
                 })
                 const data = await response.json()
                 if (response.ok) {
