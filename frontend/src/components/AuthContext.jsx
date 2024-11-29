@@ -20,9 +20,10 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('token');
         setIsAuthenticated(false);
     };
+    const backAPI = 'https://backend-hrcompliance.onrender.com/'
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, backAPI }}>
             {children}
         </AuthContext.Provider>
     );
