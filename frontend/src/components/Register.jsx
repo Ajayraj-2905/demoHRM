@@ -5,7 +5,6 @@ const Register = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    
     const handleSubmit = async (e) => {
         e.preventDefault()
         const response = await fetch('https://backend-hrcompliance.onrender.com/api/auth/register', {
