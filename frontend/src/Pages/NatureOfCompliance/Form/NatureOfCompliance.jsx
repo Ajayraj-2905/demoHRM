@@ -8,7 +8,7 @@ const NatureOfCompliance = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const response = await fetch('http://localhost:5000/api/natureofcompliance', {
+        const response = await fetch('https://backend-hrcompliance.onrender.com/api/natureofcompliance', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
