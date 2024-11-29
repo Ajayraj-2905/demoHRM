@@ -10,7 +10,7 @@ const Register = () => {
         const response = await fetch('https://backend-hrcompliance.onrender.com/api/auth/register', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            credentials: 'include', 
+            // credentials: 'include', 
             body: JSON.stringify({ username, email, password }),
         })
         const data = await response.json()
