@@ -9,7 +9,7 @@ const UpdateNatureOfCompliance = () => {
 
     useEffect(() => {
         if (id) {
-            fetch(`https://backend-hrcompliance.onrender.com/api/natureofcompliance/${id}`)
+            fetch(`http://localhost:5000/api/natureofcompliance/${id}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.nature_of_compliance) {
@@ -41,7 +41,7 @@ const UpdateNatureOfCompliance = () => {
             }
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/natureofcompliance/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/natureofcompliance/${id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ compliance }),

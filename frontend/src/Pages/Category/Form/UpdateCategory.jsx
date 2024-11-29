@@ -9,7 +9,7 @@ const UpdateCategory = () => {
 
     useEffect(() => {
         if (id) {
-            fetch(`https://backend-hrcompliance.onrender.com/api/category/${id}`)
+            fetch(`http://localhost:5000/api/category/${id}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.category_name) {
@@ -41,7 +41,7 @@ const UpdateCategory = () => {
             }
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/category/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/category/${id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ category }),

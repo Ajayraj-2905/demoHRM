@@ -13,7 +13,7 @@ const UpdateUserManagement = () => {
 
     useEffect(() => {
         if (id) {
-            fetch(`https://backend-hrcompliance.onrender.com/api/usermanagement/${id}`)
+            fetch(`http://localhost:5000/api/usermanagement/${id}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data) {
@@ -22,7 +22,7 @@ const UpdateUserManagement = () => {
                             companyAccess: data.company_access, modulesAccess: data.module_access, profilePhoto: null
                         })
                         {
-                            data.profile_photo ? setPreviewImage(`https://backend-hrcompliance.onrender.com/public/${data.profile_photo}`) :
+                            data.profile_photo ? setPreviewImage(`http://localhost:5000/public/${data.profile_photo}`) :
                                 setPreviewImage(null)
                         }
                     } else {
@@ -63,7 +63,7 @@ const UpdateUserManagement = () => {
                     data.append('image', null)
             }
             if (result.isConfirmed) {
-                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/usermanagement/upload/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/usermanagement/upload/${id}`, {
                     method: "PUT",
                     body: data,
                 })
