@@ -8,11 +8,10 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
   const { login } = useAuth()
-  const apiURl = process.env.API_URL
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${apiURl}api/auth/login`, {
+    const response = await fetch('https://backend-hrcompliance.onrender.com/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),
