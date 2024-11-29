@@ -5,10 +5,11 @@ import Swal from 'sweetalert2'
 const Category = () => {
     const [category, setCategory] = useState('')
     const navigate = useNavigate()
+    const apiURl = process.env.API_URL
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const response = await fetch('http://localhost:5000/api/category', {
+        const response = await fetch(`${apiURl}api/category`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

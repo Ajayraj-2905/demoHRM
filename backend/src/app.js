@@ -8,7 +8,7 @@ const natureofcomRoutes = require('./routes/natureofcomRoutes')
 const userRoutes = require('./routes/userRoutes')
 
 const app = express()
-app.use(cors())
+app.use(cors({ origin: 'https://hrcompliance-management.vercel.app' }))
 app.use(bodyParser.json())
 app.use('/public', express.static('public'));
 
