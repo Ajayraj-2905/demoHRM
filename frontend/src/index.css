@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+}
+
+* {    
+    @apply font-poppins;
+    scrollbar-width: thin;
+}
+
+input[type='checkbox'] {
+    @apply accent-black
+}
