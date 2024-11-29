@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from './AuthContext'
 
 const Register = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const {backAPI} = useAuth()
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await fetch('https://backend-hrcompliance.onrender.com/api/auth/register', {
+        const response = await fetch(`${backAPI}api/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
