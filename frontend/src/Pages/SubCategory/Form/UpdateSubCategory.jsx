@@ -11,7 +11,7 @@ const UpdateSubCategory = () => {
 
     useEffect(() => {
         if (id) {
-            fetch(`http://localhost:5000/api/subcategory/${id}`)
+            fetch(`https://backend-hrcompliance.onrender.com/api/subcategory/${id}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.subcategory_name) {
@@ -27,7 +27,7 @@ const UpdateSubCategory = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/category')
+            const response = await fetch('https://backend-hrcompliance.onrender.com/api/category')
             const result = await response.json()
             setCategories(result)
         } catch (error) {
@@ -57,9 +57,10 @@ const UpdateSubCategory = () => {
             }
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await fetch(`http://localhost:5000/api/subcategory/${id}`, {
+                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/subcategory/${id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include', 
                     body: JSON.stringify({ subCategory, categoryId }),
                 })
                 const data = await response.json()

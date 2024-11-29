@@ -11,7 +11,7 @@ const SubCategory = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/category')
+            const response = await fetch('https://backend-hrcompliance.onrender.com/api/category')
             const result = await response.json()
             setCategories(result)
         } catch (error) {
@@ -25,9 +25,10 @@ const SubCategory = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const response = await fetch("http://localhost:5000/api/subCategory", {
+        const response = await fetch("https://backend-hrcompliance.onrender.com/api/subCategory", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
+            credentials: 'include', 
             body: JSON.stringify({ subCategory, categoryId }),
         })
         const data = await response.json()

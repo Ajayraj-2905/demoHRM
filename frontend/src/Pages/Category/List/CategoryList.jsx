@@ -13,7 +13,7 @@ const CategoryList = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/category')
+            const response = await fetch('https://backend-hrcompliance.onrender.com/api/category')
             const result = await response.json()
             setData(result)
         } catch (error) {
@@ -45,8 +45,9 @@ const CategoryList = () => {
             }
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await fetch(`http://localhost:5000/api/category/${id}`, {
+                const response = await fetch(`https://backend-hrcompliance.onrender.com/api/category/${id}`, {
                     method: 'DELETE',
+                    credentials: 'include',
                 })
                 const data = await response.json()
                 if (response.ok) {
