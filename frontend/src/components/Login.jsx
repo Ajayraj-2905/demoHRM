@@ -14,6 +14,7 @@ const Login = () => {
     const response = await fetch('https://backend-hrcompliance.onrender.com/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({ username, password }),
     });
 

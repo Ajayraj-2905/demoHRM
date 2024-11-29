@@ -10,9 +10,8 @@ const Category = () => {
         event.preventDefault()
         const response = await fetch('https://backend-hrcompliance.onrender.com/api/category', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include', 
             body: JSON.stringify({ category }),
         })
         if (response.ok) {

@@ -8,14 +8,15 @@ const natureofcomRoutes = require('./routes/natureofcomRoutes')
 const userRoutes = require('./routes/userRoutes')
 
 const app = express()
-app.use(cors({ origin: 'https://hrcompliance-management.vercel.app' }))
+const allowedOrigins = ['https://hrcompliance-management.vercel.app']
+app.use(cors({ origin: allowedOrigins, credentials: true }))
 app.use(bodyParser.json())
-app.use('/public', express.static('public'));
+app.use('/public', express.static('public'))
 
-app.use('/api/auth', authRoutes);
-app.use('/api/category', categoryRoutes);
-app.use('/api/subcategory', subcategoryRoutes);
-app.use('/api/natureofcompliance', natureofcomRoutes);
+app.use('/api/auth', authRoutes)
+app.use('/api/category', categoryRoutes)
+app.use('/api/subcategory', subcategoryRoutes)
+app.use('/api/natureofcompliance', natureofcomRoutes)
 app.use('/api/usermanagement', userRoutes)
 
 module.exports = app
