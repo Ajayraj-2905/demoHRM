@@ -43,7 +43,6 @@ exports.updateUser = async (req, res) => {
     const usernameId = req.params;
     const { username, email, password, designation, companyAccess, modulesAccess } = req.body
     const image = req.file ? req.file.filename : null
-    console.log(image, req.file)
 
     if (!username || !email || !password || !designation || !companyAccess || !modulesAccess) {
         return res.status(400).json({ message: 'All fields are required except profile photo' });
@@ -60,7 +59,6 @@ exports.updateUser = async (req, res) => {
     } else {
         values.push(usernameId.id)
     }
-    console.log(values)
     db.query(sql, values, (err, results) => {
         if (err) return res.status(500).json({ error: 'Database error' })
         if (results.affectedRows === 0) return res.status(404).json({ message: 'User not found' })
