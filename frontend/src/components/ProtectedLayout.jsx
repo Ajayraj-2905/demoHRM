@@ -1,7 +1,7 @@
-import React from 'react';
-import Sidebar from '../Navbar/Sidebar';
-import Navbar from '../Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
+import React from 'react'
+import Sidebar from '../Navbar/Sidebar'
+import Navbar from '../Navbar/Navbar'
+import { Outlet } from 'react-router-dom'
 
 const ProtectedLayout = ({ isSidebarOpen, toggleSidebar }) => {
     return (
@@ -17,7 +17,7 @@ const ProtectedLayout = ({ isSidebarOpen, toggleSidebar }) => {
                 </main>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default ProtectedLayout;
+export default ProtectedLayout

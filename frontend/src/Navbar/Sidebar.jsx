@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import CompanyLogo from '../assets/Companylogo.png'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
-    const [isComplianceOpen, setIsComplianceOpen] = useState(false);
-    const [isReportOpen, setIsReportOpen] = useState(false);
+    const [isComplianceOpen, setIsComplianceOpen] = useState(false)
+    const [isReportOpen, setIsReportOpen] = useState(false)
     const toggleComplianceMaster = () => {
-        setIsComplianceOpen(!isComplianceOpen);
-    };
+        setIsComplianceOpen(!isComplianceOpen)
+    }
     const toggleReport = () => {
-        setIsReportOpen(!isReportOpen);
-    };
+        setIsReportOpen(!isReportOpen)
+    }
     return (
         <aside
             className={`fixed z-40 top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in
@@ -135,7 +135,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
                 </Link>
             </nav>
         </aside >
-    );
-};
+    )
+}
 
-export default Sidebar;
+export default Sidebar

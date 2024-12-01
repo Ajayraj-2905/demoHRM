@@ -1,12 +1,12 @@
-import React from 'react';
-import { useAuth } from './AuthContext';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { useAuth } from './AuthContext'
+import { Link } from 'react-router-dom'
 
 const Dashboard = () => {
-    const { logout } = useAuth();
+    const { logout } = useAuth()
     const handleLogout = () => {
-        logout();
-    };
+        logout()
+    }
 
     return (
         <div className='p-5 flex flex-col justify-center gap-4'>
@@ -18,7 +18,7 @@ const Dashboard = () => {
             <Link className='mx-5 py-2 w-36 text-center bg-yellow-500 rounded-md text-white' to='/userManagement'>User Management</Link>
             <Link className='mx-5 py-2 w-36 text-center bg-yellow-500 rounded-md text-white' to='/compliance'>Compliance</Link>
         </div>
-    );
-};
+    )
+}
 
-export default Dashboard;
+export default Dashboard
