@@ -32,7 +32,7 @@ const NatureOfComplianceList = () => {
         Swal.fire({
             title: 'Delete',
             text: "Do you want to delete the category",
-            imageUrl: '/public/Edit.png',
+            imageUrl: '/public/Deletet.png',
             imageHeight: 80,
             imageAlt: 'Delete Image',
             confirmButtonText: "Delete",
